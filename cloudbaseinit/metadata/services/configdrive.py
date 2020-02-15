@@ -140,3 +140,9 @@ class NoCloudConfigDriveService(BaseConfigDriveService):
             return []
 
         return [raw_ssh_keys[key].get('openssh-key') for key in raw_ssh_keys]
+
+    def get_admin_username(self):
+        return self._get_meta_data().get('admin-username')
+
+    def get_admin_password(self):
+        return self._get_meta_data().get('admin-password')
